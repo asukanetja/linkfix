@@ -1,50 +1,76 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>LinkFix - あすか通信</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <title>LinkFix - Asuka Comm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body { font-family: sans-serif; margin: 2em; background: #f9f9f9; color: #333; }
-    h1, h2 { color: #2c3e50; }
-    .container { max-width: 800px; margin: auto; background: white; padding: 2em; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    .download-btn { display: inline-block; padding: 0.8em 1.5em; background: #3498db; color: white; text-decoration: none; border-radius: 6px; margin: 0.5em 0; }
-    .screenshot { max-width: 100%; margin-top: 1em; border: 1px solid #ccc; }
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      margin: 2em;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .button {
+      display: inline-block;
+      padding: 0.8em 1.5em;
+      background: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin: 0.5em 0;
+    }
+    .screenshot {
+      max-width: 100%;
+      margin-top: 1em;
+      border: 1px solid #ccc;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>LinkFix</h1>
-    <p>ショートカット(.lnk)のリンク先を一覧・置換できる、Windows向けフリーソフト。</p>
+    <p>LinkFix is a free tool for Windows that lets you list and batch-replace shortcut (.lnk) targets.</p>
 
-    <h2>主な機能</h2>
+    <h2>Features</h2>
     <ul>
-      <li>指定フォルダ内のショートカットを一括検索（サブフォルダ対応）</li>
-      <li>リンク先のパスを一覧表示</li>
-      <li>特定文字列を一括で置換</li>
-      <li>CSVファイルでエクスポート可能</li>
+      <li>Search all .lnk files in a folder (including subfolders)</li>
+      <li>Display shortcut targets in a list</li>
+      <li>Batch replace specific strings in shortcut paths</li>
+      <li>Export results as CSV</li>
     </ul>
 
-    <h2>スクリーンショット</h2>
-    <img src="screenshot.png" alt="アプリ画面" class="screenshot">
+    <h2>Screenshot</h2>
+    <img src="LinkFix_UI_no_bg.png" alt="App Screenshot" class="screenshot" />
 
-    <h2>ダウンロード</h2>
-    <a class="download-btn" href="LinkFix_Japanese_v1.0.zip" download>日本語版ダウンロード</a><br>
-    <a class="download-btn" href="LinkFix_English_v1.0.zip" download>English Version Download</a>
+    <h2>Download</h2>
+    <a class="button" href="LinkFix_English_v1.0.zip" download>Download English Version</a><br>
+    <a class="button" href="LinkFix_Japanese_v1.0.zip" download>日本語版はこちら</a>
 
-    <h2>対応環境</h2>
+    <h2>System Requirements</h2>
     <ul>
       <li>Windows 10 / 11</li>
-      <li>インストール不要・そのまま実行OK</li>
+      <li>No installation required – just run the .exe file</li>
     </ul>
 
-    <h2>開発者</h2>
-    <p>あすか通信<br>
-    <small>Powered by Python + tkinter</small></p>
+    <h2>Developer</h2>
+    <p>Asuka Communication (あすか通信)<br>
+    <small>Built with Python and tkinter</small></p>
 
-    <h2>ライセンス・注意事項</h2>
-    <p>LinkFixはフリーソフトです。商用・非商用問わずご利用いただけます。<br>
-    利用による損害等には一切責任を負いません。自己責任でご利用ください。</p>
+    <h2>License & Disclaimer</h2>
+    <p>This tool is free to use for personal and commercial purposes.<br>
+    Use at your own risk.</p>
   </div>
 </body>
 </html>
