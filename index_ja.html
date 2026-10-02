@@ -1,59 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-093FG8PHHC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-093FG8PHHC');
+</script>
   <meta charset="UTF-8" />
   <title>LinkFix - ショートカット一括置換ツール</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="LinkFixは、Windowsでショートカットのリンク先や作業フォルダを一括置換できる無料ツールです。">
-  <meta name="keywords" content="LinkFix, ショートカット, バッチ置換, lnk, Windows, ユーティリティ, CSV, Python, フリーソフト">
+  <meta name="description" content="LinkFixは、Windowsのショートカットのリンク先や作業フォルダを一括置換・削除できる無料ツールです。ネットワークの場所形式のショートカットやクイックアクセスにも対応。">
+  <meta name="keywords" content="LinkFix, ショートカット, バッチ置換, lnk, クイックアクセス, Windows, ユーティリティ, CSV, Python, フリーソフト">
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #ffffff;
-      color: #0f1419;
-      max-width: 800px;
-      margin: auto;
-      padding: 2em;
-    }
-    h1, h2 {
-      color: #1d9bf0;
-    }
-    a {
-      color: #1d9bf0;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    img {
-      border-radius: 6px;
-    }
-    .form-box {
-      background-color: #f9f9f9;
-      padding: 1em;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-top: 3em;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.5em;
-      margin-bottom: 1em;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-family: inherit;
-    }
-    button {
-      background-color: #1d9bf0;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1em;
-      border-radius: 5px;
-      cursor: pointer;
-    }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #0f1419;
+  max-width: 800px;
+  margin: auto;
+  padding: 2em;
+}
+h1, h2 {
+  color: #1d9bf0;
+}
+a {
+  color: #1d9bf0;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+img {
+  border-radius: 6px;
+}
+.note {
+  background: #f5f8fa;
+  border-left: 4px solid #1d9bf0;
+  padding: 0.6em 1em;
+  margin: 1em 0;
+}
   </style>
 </head>
 <body>
@@ -63,52 +52,78 @@
   <span style="font-size: 1.8em; font-weight: bold; color: #1d9bf0;">LinkFix</span>
 </div>
 
-<h1>LinkFix v1.1</h1>
-<p>LinkFixは、ショートカット（.lnk）のリンク先と作業フォルダを一括で編集できる無料のWindowsツールです。</p>
+<h1>LinkFix v2.0</h1>
+<p>LinkFixは、ショートカット（.lnk）のリンク先と作業フォルダを一括で置換・削除できる無料のWindowsツールです。サーバーやNASのアドレス変更に伴うショートカットの修正作業をまとめて行えます。</p>
 
 <h2>ダウンロード</h2>
 <ul>
-  <li><a href="LinkFix_Japanese_v1.1.zip">ダウンロード（日本語版）</a></li>
+  <li><a href="LinkFix_Japanese_v2.0.zip">ダウンロード（日本語版 v2.0）</a></li>
+  <li><a href="LinkFix_Japanese_v1.1.zip">旧バージョン（日本語版 v1.1）</a></li>
   <li><a href="index.html">English page here</a></li>
 </ul>
 
 <h2>主な機能</h2>
 <ul>
-  <li>ショートカットのリンク先・作業フォルダの一括置換</li>
+  <li>ショートカットのリンク先・作業フォルダの一括置換（大文字・小文字は区別しません）</li>
+  <li>特定のアドレスを含むショートカットの一括削除</li>
+  <li>一覧にフォルダの階層（場所）と種類を表示。置換・削除の対象は黄色でハイライト</li>
+  <li>変更・削除の前に自動でバックアップ。バックアップとログは実行ファイルと同じ場所に保存</li>
+  <li>「ネットワークの場所」形式（モニタのアイコン）のショートカットにも対応</li>
+  <li>エクスプローラーの「クイックアクセス」のピン留めを置換・削除（ピン留めのみを対象にすることも可能）</li>
+  <li>処理の進捗表示と中止ボタン</li>
   <li>CSV出力とログ保存に対応</li>
   <li>インストール不要ですぐに使用可能</li>
 </ul>
 
+<div class="note">
+  <strong>ご利用にあたって：</strong>
+  ショートカットの置換・削除は、事前にバックアップを取ってから実行されます（設定でオフにも可能）。
+  クイックアクセスの置換・削除はバックアップされませんのでご注意ください。
+  初めて使うときは、少数のショートカットで試してからの実行をおすすめします。
+</div>
+
+<h2>動作環境</h2>
+<ul>
+  <li>Windows 10 / 11</li>
+  <li>Pythonのインストールは不要です（実行ファイル形式）</li>
+</ul>
+
+<h2>更新履歴</h2>
+<ul>
+  <li><strong>v2.0</strong>：削除機能、大文字・小文字の区別なし、階層表示、バックアップ、ネットワークの場所形式への対応、クイックアクセス対応、進捗表示を追加。画面を刷新</li>
+  <li><strong>v1.1</strong>：リンク先・作業フォルダの一括置換、CSV出力、ログ保存</li>
+</ul>
+
 <h2>掲載実績</h2>
-<div style="display: flex; gap: 1.5em; align-items: center; margin: 1em 0;">
-  <a href="https://www.softpedia.com/get/System/File-Management/LinkFix.shtml" target="_blank">
-    <img src="softpedia_badge.png" alt="Softpedia掲載" style="height: 96px;" />
+<p>
+  <a href="https://www.softpedia.com/get/System/File-Management/LinkFix.shtml" target="_blank" rel="noopener">
+    <img src="https://www.softpedia.com/base_img/softpedia_badge_80.png"
+         alt="Softpedia掲載"
+         style="width: 160px; height: auto; border: none; margin: 0.5em 0;" />
   </a>
-  <img src="mado_banner.png" alt="窓の杜に掲載されました" style="height: 96px;" />
+</p>
+<p>
+  <img src="mado_banner.png" alt="窓の杜に掲載されました"
+       style="width: 160px; height: auto; margin: 0.5em 0;" />
+</p>
+
+<!-- Google AdSense -->
+<div style="margin: 2em 0;">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2338773336731263"
+          crossorigin="anonymous"></script>
+  <ins class="adsbygoogle"
+       style="display:block; text-align:center;"
+       data-ad-layout="in-article"
+       data-ad-format="fluid"
+       data-ad-client="ca-pub-2338773336731263"
+       data-ad-slot="1234567890"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 </div>
 
 <h2>画面イメージ</h2>
-<img src="LinkFix_UI_no_bg.png" alt="LinkFixの画面" style="max-width: 80%; border: 1px solid #ccc;" />
-
-<h2>開発支援</h2>
-<p>このツールが役に立ったら、PayPalで支援していただけると嬉しいです：</p>
-
-<p>
-  <a href="https://paypal.me/asukanetja?country.x=JP&locale.x=ja_JP"
-     style="display:inline-block; padding:10px 20px; background-color:#1d9bf0; color:white; text-decoration:none; border-radius:6px;">
-     💖 PayPalで支援する
-  </a>
-</p>
-
-<h2>お問い合わせ</h2>
-<div class="form-box">
-  <form action="https://formspree.io/f/movdnzpn" method="POST">
-    <input type="text" name="name" placeholder="お名前" required />
-    <input type="email" name="email" placeholder="メールアドレス" required />
-    <textarea name="message" placeholder="お問い合わせ内容" required></textarea>
-    <button type="submit">送信</button>
-  </form>
-</div>
+<img src="LinkFix.png" alt="LinkFixの画面" style="max-width: 100%; border: 1px solid #ccc;" />
 
 </body>
 </html>
